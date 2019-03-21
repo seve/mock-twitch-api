@@ -44,7 +44,7 @@ func fakeThatShit(c echo.Context) error {
 			Tier:            string(tierNum + 1*1000),
 			PlanName:        planNames[tierNum],
 			UserID:          strconv.Itoa(rand.Intn(1000)),
-			UserName:        "dick" + string(rand.Intn(100)),
+			UserName:        "dick" + strconv.Itoa(rand.Intn(1000)),
 		}
 	}
 	return c.JSON(http.StatusOK, data)
