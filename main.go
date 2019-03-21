@@ -4,6 +4,7 @@ import (
 	"math/rand"
 	"net/http"
 	"strconv"
+	"os"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -18,7 +19,7 @@ func main() {
 
 	e.GET("/helix/subscriptions", fakeThatShit)
 
-	e.Logger.Error(e.Start(":1323"))
+	e.Logger.Error(e.Start(":" + os.Getenv("PORT")))
 }
 
 type Sub struct {
